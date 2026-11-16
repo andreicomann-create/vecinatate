@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vecinătate — platformă de voluntariat local. Găsește oameni din cartierul tău care au nevoie de ajutor.">
+  <title>Vecinătate — Voluntariat local</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= ANTET ================= -->
+  <header class="antet">
+    <div class="container antet-interior">
+      <a href="#" class="marca" aria-label="Vecinătate, pagina principală">
+        <span class="marca-semn" aria-hidden="true"></span>
+        Vecinătate
+      </a>
+      <nav class="meniu" aria-label="Navigare principală">
+        <a href="#cereri">Cereri</a>
+        <a href="#cum-functioneaza">Cum funcționează</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#comunitate">Comunitate</a>
+        <a href="#intrebari">Întrebări</a>
+      </nav>
+      <div class="antet-actiuni">
+        <button type="button" class="btn-icon" id="comuta-tema" aria-label="Schimbă tema">
+          <svg class="icon-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+          <svg class="icon-soare" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button type="button" class="profil" id="deschide-profil" aria-label="Deschide profilul">
+          <span class="avatar avatar-mic avatar-tu">Tu</span>
+          <span class="profil-text">
+            <span class="profil-insigna" id="insigna">Începător</span>
+            <span class="profil-puncte"><strong id="puncte">0</strong> puncte</span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= PREZENTARE ================= -->
+  <section class="erou">
+    <div class="container erou-interior">
+      <div class="erou-text">
+        <p class="supratitlu"><span class="punct-viu" aria-hidden="true"></span> <span id="erou-activ">0</span> cereri active în acest moment</p>
+        <h1>Ajutorul începe<br>la <em>ușa de alături.</em></h1>
+        <p class="erou-descriere">
+          Vecinătate leagă oamenii care au nevoie de sprijin de vecinii care au timp să ofere.
+          Fără intermediari, fără birocrație — doar fapte mici, făcute aproape de casă.
+        </p>
+        <div class="erou-actiuni">
+          <a href="#cereri" class="btn btn-principal btn-mare">
+            Vezi cererile active
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <button type="button" class="btn btn-secundar btn-mare" id="deschide-form">Solicită ajutor</button>
+        </div>
+        <div class="incredere">
+          <div class="avatare-stiva" aria-hidden="true">
+            <span class="avatar" style="--h:18">AM</span>
+            <span class="avatar" style="--h:150">RP</span>
+            <span class="avatar" style="--h:210">IC</span>
+            <span class="avatar" style="--h:290">DS</span>
+          </div>
+          <p><strong>Peste 1.200 de vecini</strong> din 14 cartiere s-au implicat deja.</p>
+        </div>
+      </div>
+
+      <div class="erou-ilustratie" aria-hidden="true">
+        <svg viewBox="0 0 480 420" class="ilustratie">
+          <defs>
+            <linearGradient id="g-cer" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" class="il-cer-sus"/>
+              <stop offset="1" class="il-cer-jos"/>
+            </linearGradient>
+            <clipPath id="clip-ilus"><rect width="480" height="420" rx="24"/></clipPath>
+          </defs>
+          <g clip-path="url(#clip-ilus)">
+            <rect width="480" height="420" fill="url(#g-cer)"/>
+            <circle cx="360" cy="110" r="46" class="il-soare"/>
+            <circle cx="360" cy="110" r="70" class="il-soare-halo"/>
+            <path d="M0 260 Q120 200 240 245 T480 225 V420 H0Z" class="il-deal-spate"/>
+            <path d="M0 300 Q140 255 260 290 T480 280 V420 H0Z" class="il-deal-fata"/>
+
+            <!-- case -->
+            <g transform="translate(70 215)">
+              <rect x="0" y="40" width="80" height="70" class="il-casa-1"/>
+              <path d="M-8 44 L40 4 L88 44Z" class="il-acoperis-1"/>
+              <rect x="14" y="58" width="18" height="18" class="il-fereastra"/>
+              <rect x="48" y="70" width="18" height="40" class="il-usa"/>
+            </g>
+            <g transform="translate(180 190)">
+              <rect x="0" y="40" width="96" height="100" class="il-casa-2"/>
+              <path d="M-8 44 L48 0 L104 44Z" class="il-acoperis-2"/>
+              <rect x="16" y="60" width="20" height="20" class="il-fereastra"/>
+              <rect x="60" y="60" width="20" height="20" class="il-fereastra"/>
+              <rect x="38" y="100" width="22" height="40" class="il-usa"/>
+            </g>
+            <g transform="translate(300 225)">
+              <rect x="0" y="40" width="74" height="70" class="il-casa-3"/>
+              <path d="M-6 44 L37 8 L80 44Z" class="il-acoperis-3"/>
+              <rect x="12" y="58" width="16" height="16" class="il-fereastra"/>
+              <rect x="44" y="58" width="16" height="16" class="il-fereastra"/>
+            </g>
+
+            <!-- copaci -->
+            <g class="il-copac"><rect x="28" y="300" width="6" height="30" class="il-trunchi"/><circle cx="31" cy="290" r="22"/></g>
+            <g class="il-copac"><rect x="410" y="290" width="6" height="36" class="il-trunchi"/><circle cx="413" cy="278" r="26"/></g>
+            <g class="il-copac"><rect x="282" y="318" width="5" height="22" class="il-trunchi"/><circle cx="284" cy="310" r="15"/></g>
+
+            <!-- oameni -->
+            <g transform="translate(150 330)">
+              <circle cx="0" cy="0" r="9" class="il-cap"/>
+              <rect x="-10" y="11" width="20" height="30" rx="9" class="il-corp-1"/>
+            </g>
+            <g transform="translate(178 334)">
+              <circle cx="0" cy="0" r="8" class="il-cap"/>
+              <rect x="-9" y="10" width="18" height="27" rx="8" class="il-corp-2"/>
+            </g>
+            <path d="M156 352 Q166 344 172 352" class="il-mana"/>
+
+            <!-- drum -->
+            <path d="M200 420 Q230 360 330 340 T480 330" class="il-drum"/>
+          </g>
+        </svg>
+
+        <div class="plutitor plutitor-1">
+          <span class="avatar avatar-mic" style="--h:18">EL</span>
+          <div><strong>Elena a primit ajutor</strong><span>Titan · acum 12 min</span></div>
+        </div>
+        <div class="plutitor plutitor-2">
+          <span class="plutitor-cifra">+3</span>
+          <div><strong>voluntari noi</strong><span>în Militari, azi</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CIFRE ================= -->
+  <section class="banda-cifre" aria-label="Statistici">
+    <div class="container cifre">
+      <div class="cifra"><span class="cifra-valoare" id="stat-total" data-numar>0</span><span class="cifra-eticheta">cereri active</span></div>
+      <div class="cifra"><span class="cifra-valoare" id="stat-voluntari" data-numar>0</span><span class="cifra-eticheta">voluntari implicați</span></div>
+      <div class="cifra"><span class="cifra-valoare" id="stat-ore" data-numar>0</span><span class="cifra-eticheta">ore oferite comunității</span></div>
+      <div class="cifra"><span class="cifra-valoare" id="stat-cartiere" data-numar>0</span><span class="cifra-eticheta">cartiere acoperite</span></div>
+    </div>
+  </section>
+
+  <!-- ================= PAȘI ================= -->
+  <section id="cum-functioneaza" class="pasi">
+    <div class="container">
+      <div class="sectiune-antet">
+        <p class="supratitlu-mic">Simplu și transparent</p>
+        <h2 class="titlu-sectiune">Cum funcționează</h2>
+      </div>
+      <ol class="pasi-lista">
+        <li class="pas">
+          <span class="pas-icon cat-varstnici"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg></span>
+          <span class="pas-numar">Pasul 01</span>
+          <h3>Cineva cere ajutor</h3>
+          <p>Un vecin, o școală sau o organizație publică o nevoie concretă, cu locație, dată și durată estimată.</p>
+        </li>
+        <li class="pas">
+          <span class="pas-icon cat-scoli"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></span>
+          <span class="pas-numar">Pasul 02</span>
+          <h3>Tu alegi cum contribui</h3>
+          <p>Filtrezi după cartier, domeniu sau urgență și te înscrii la sarcinile care se potrivesc programului tău.</p>
+        </li>
+        <li class="pas">
+          <span class="pas-icon cat-mediu"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span>
+          <span class="pas-numar">Pasul 03</span>
+          <h3>Comunitatea crește</h3>
+          <p>Fiecare contribuție îți aduce puncte și insigne. În timp, se formează o rețea de oameni pe care te poți baza.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= CERERI ================= -->
+  <main id="cereri" class="cereri">
+    <div class="container">
+      <div class="cereri-antet">
+        <div class="sectiune-antet">
+          <p class="supratitlu-mic">Cereri din comunitate</p>
+          <h2 class="titlu-sectiune">Unde e nevoie de tine</h2>
+        </div>
+        <div class="unelte">
+          <div class="cautare">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input type="search" id="cautare" placeholder="Caută după titlu, cartier sau competență" aria-label="Caută cereri">
+          </div>
+          <label class="selector">
+            <span class="ascuns">Sortează</span>
+            <select id="sortare" aria-label="Sortează cererile">
+              <option value="recente">Cele mai recente</option>
+              <option value="urgente">Urgente mai întâi</option>
+              <option value="aproape">Aproape complete</option>
+              <option value="data">După data activității</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="bara-filtre">
+        <div class="filtre" id="filtre" role="group" aria-label="Filtrează după categorie"></div>
+        <div class="comutatoare">
+          <button type="button" class="comutator" id="doar-urgente" aria-pressed="false">
+            <span class="comutator-punct urgent" aria-hidden="true"></span> Doar urgente
+          </button>
+          <button type="button" class="comutator" id="doar-salvate" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg> Salvate
+          </button>
+        </div>
+      </div>
+
+      <p class="rezultate" id="rezultate"></p>
+      <div id="lista" class="grila" aria-live="polite"></div>
+
+      <div id="gol" class="gol hidden">
+        <svg viewBox="0 0 120 90" aria-hidden="true"><rect x="20" y="20" width="80" height="56" rx="8"/><path d="M20 36h80M38 52h44M44 62h32"/></svg>
+        <p>Nu am găsit cereri care să corespundă filtrelor.</p>
+        <button type="button" class="btn btn-secundar" id="reseteaza-filtre">Resetează filtrele</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= QUIZ ================= -->
+  <section id="quiz" class="quiz">
+    <div class="container quiz-interior">
+      <div class="sectiune-antet">
+        <p class="supratitlu-mic">Testează-te</p>
+        <h2 class="titlu-sectiune">Ești pregătit să fii voluntar?</h2>
+        <p class="sectiune-descriere">Cinci întrebări scurte despre cum ajuți corect și în siguranță. Fiecare răspuns corect valorează 10 puncte.</p>
+      </div>
+
+      <div class="quiz-card" id="quiz-card">
+        <div class="quiz-sus">
+          <span id="progres-quiz">5 întrebări</span>
+          <span id="scor">Scor: 0</span>
+        </div>
+        <div class="progres quiz-progres"><div id="bara-quiz" style="width:0%"></div></div>
+
+        <div id="continut">
+          <p id="intrebare">Apasă START ca să începi.</p>
+          <div id="raspunsuri"></div>
+          <p id="mesaj"></p>
+        </div>
+
+        <div class="quiz-actiuni">
+          <button type="button" class="btn btn-principal btn-mare" id="start">START JOC</button>
+          <button type="button" class="btn btn-principal" id="urmatoarea" hidden>Următoarea întrebare</button>
+          <button type="button" class="btn btn-secundar" id="reia" hidden>Joacă din nou</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMUNITATE ================= -->
+  <section id="comunitate" class="comunitate">
+    <div class="container comunitate-interior">
+      <div class="clasament-card">
+        <div class="sectiune-antet">
+          <p class="supratitlu-mic">Luna aceasta</p>
+          <h2 class="titlu-sectiune">Cei mai activi vecini</h2>
+        </div>
+        <ol class="clasament" id="clasament"></ol>
+      </div>
+
+      <div class="marturii">
+        <div class="sectiune-antet">
+          <p class="supratitlu-mic">Povești reale</p>
+          <h2 class="titlu-sectiune">Ce spun vecinii</h2>
+        </div>
+        <figure class="marturie">
+          <blockquote>„Nu credeam că o să cer vreodată ajutor pe internet. În două ore, o studentă din bloc era la ușa mea cu cumpărăturile.”</blockquote>
+          <figcaption><span class="avatar" style="--h:18">EP</span><span><strong>Elena Popescu</strong>Pensionară, Titan</span></figcaption>
+        </figure>
+        <figure class="marturie">
+          <blockquote>„Am vopsit gardul școlii cu 12 oameni pe care nu-i cunoșteam. Acum ne vedem lunar pentru alte proiecte.”</blockquote>
+          <figcaption><span class="avatar" style="--h:210">MR</span><span><strong>Mihai Radu</strong>Inginer, Militari</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CITAT ================= -->
+  <section class="citat-banda">
+    <div class="container">
+      <p class="citat">„Nu poți ajuta pe toată lumea. Dar poți ajuta pe cineva din blocul tău.”</p>
+    </div>
+  </section>
+
+  <!-- ================= ÎNTREBĂRI ================= -->
+  <section id="intrebari" class="intrebari">
+    <div class="container intrebari-interior">
+      <div class="sectiune-antet">
+        <p class="supratitlu-mic">Întrebări frecvente</p>
+        <h2 class="titlu-sectiune">Bine de știut</h2>
+        <p class="sectiune-descriere">Nu găsești răspunsul? Scrie-ne și revenim în cel mult o zi lucrătoare.</p>
+      </div>
+      <div class="acordeon">
+        <details>
+          <summary>Trebuie să am experiență ca să mă înscriu?</summary>
+          <p>Nu. Majoritatea cererilor nu au nevoie de nicio pregătire. Acolo unde e nevoie de o competență anume, de exemplu meditații sau reparații, o găsești trecută în detaliile cererii.</p>
+        </details>
+        <details>
+          <summary>Ce se întâmplă după ce mă ofer să ajut?</summary>
+          <p>Organizatorul primește o notificare cu numele tău și te contactează pentru detalii. Te poți retrage oricând din pagina de detalii a cererii.</p>
+        </details>
+        <details>
+          <summary>Cine poate publica o cerere?</summary>
+          <p>Oricine: persoane fizice, școli, asociații de proprietari sau ONG-uri. Cererile cu caracter comercial sunt eliminate.</p>
+        </details>
+        <details>
+          <summary>Cum funcționează punctele și insignele?</summary>
+          <p>Primești 10 puncte pentru fiecare înscriere. Punctele te urcă în niveluri, iar insignele recunosc tipurile de implicare: mediu, educație, sprijin pentru vârstnici și altele.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEWSLETTER ================= -->
+  <section class="newsletter">
+    <div class="container newsletter-interior">
+      <div>
+        <h2>Află primul de cererile din cartierul tău.</h2>
+        <p>Un e-mail scurt, o dată pe săptămână. Te poți dezabona oricând.</p>
+      </div>
+      <form id="form-newsletter" class="newsletter-form" novalidate>
+        <input type="email" id="email-newsletter" placeholder="adresa@exemplu.ro" aria-label="Adresa de e-mail" required>
+        <button type="submit" class="btn btn-principal">Abonează-mă</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= SUBSOL ================= -->
+  <footer class="subsol">
+    <div class="container subsol-grila">
+      <div class="subsol-marca">
+        <span class="marca"><span class="marca-semn" aria-hidden="true"></span>Vecinătate</span>
+        <p>O inițiativă pentru comunități mai apropiate. Construită de voluntari, pentru voluntari.</p>
+      </div>
+      <div>
+        <h4>Platformă</h4>
+        <a href="#cereri">Cereri active</a>
+        <a href="#cum-functioneaza">Cum funcționează</a>
+        <a href="#comunitate">Comunitate</a>
+      </div>
+      <div>
+        <h4>Resurse</h4>
+        <a href="#intrebari">Întrebări frecvente</a>
+        <a href="#">Ghidul voluntarului</a>
+        <a href="#">Siguranță</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="#">contact@vecinatate.ro</a>
+        <a href="#">Parteneriate</a>
+      </div>
+    </div>
+    <div class="container subsol-jos">
+      <span>© 2026 Vecinătate</span>
+      <span>Făcut cu grijă pentru comunitate</span>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL: CERERE NOUĂ ================= -->
+  <dialog id="modal" class="modal" aria-labelledby="titlu-modal">
+    <form id="form-cerere" method="dialog">
+      <div class="modal-antet">
+        <h2 id="titlu-modal">Solicită ajutor</h2>
+        <p>Descrie clar ce ai nevoie. Cererea va fi vizibilă voluntarilor din zonă.</p>
+        <button type="button" class="btn-inchide" data-inchide aria-label="Închide">
+          <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-corp">
+        <label class="camp">
+          <span>Titlu</span>
+          <input name="titlu" required maxlength="80" placeholder="Ex: Cumpărături săptămânale pentru o vecină">
+        </label>
+
+        <label class="camp">
+          <span>Descriere <em class="contor" id="contor-descriere">0 / 400</em></span>
+          <textarea name="descriere" required rows="3" maxlength="400" placeholder="Ce trebuie făcut, când și unde"></textarea>
+        </label>
+
+        <fieldset class="camp">
+          <span>Categorie</span>
+          <div class="alegeri-categorie" id="alegeri-categorie"></div>
+        </fieldset>
+
+        <div class="rand">
+          <label class="camp">
+            <span>Cartier</span>
+            <input name="cartier" required placeholder="Ex: Drumul Taberei">
+          </label>
+          <label class="camp">
+            <span>Data activității</span>
+            <input name="data" type="date" required id="camp-data">
+          </label>
+        </div>
+
+        <div class="rand">
+          <label class="camp">
+            <span>Durată estimată</span>
+            <select name="ore">
+              <option value="0.5">30 min</option>
+              <option value="1" selected>1 oră</option>
+              <option value="2.5">2–3 ore</option>
+              <option value="6">O zi</option>
+            </select>
+          </label>
+          <label class="camp">
+            <span>Voluntari necesari</span>
+            <input name="necesari" type="number" min="1" max="50" value="1">
+          </label>
+        </div>
+
+        <div class="rand">
+          <label class="camp">
+            <span>Numele tău sau al organizației</span>
+            <input name="organizator" required placeholder="Ex: Asociația de proprietari bl. C4">
+          </label>
+          <label class="camp">
+            <span>Competențe utile <em>(opțional)</em></span>
+            <input name="competente" placeholder="Ex: răbdare, permis auto">
+          </label>
+        </div>
+
+        <label class="bifa">
+          <input type="checkbox" name="urgent">
+          <span class="bifa-cutie" aria-hidden="true"></span>
+          <span>Este urgent <em>— cererea va fi evidențiată</em></span>
+        </label>
+      </div>
+
+      <div class="modal-actiuni">
+        <button type="button" class="btn btn-text" data-inchide>Anulează</button>
+        <button type="submit" class="btn btn-principal">Publică cererea</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ================= MODAL: DETALII ================= -->
+  <dialog id="modal-detalii" class="modal modal-lat" aria-label="Detaliile cererii">
+    <div id="detalii-continut"></div>
+  </dialog>
+
+  <!-- ================= SERTAR: PROFIL ================= -->
+  <div class="suprapunere" id="suprapunere" hidden></div>
+  <aside class="sertar" id="sertar" aria-label="Profilul tău" aria-hidden="true">
+    <div class="sertar-antet">
+      <h2>Profilul tău</h2>
+      <button type="button" class="btn-inchide" id="inchide-profil" aria-label="Închide profilul">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="sertar-corp" id="profil-continut"></div>
+  </aside>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
